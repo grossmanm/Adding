@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<div>
+    <input type="text" id="my_input1" />
+    <input type="text" id="my_input2" />
+    <input type="button" value="Add Them Together" onclick="doMath();" />
+</div>
+<script>
+    function doMath() {
+        sums = [];
+        text = "";
+        var y = document.getElementById("my_input1").value;
+        var z = document.getElementById("my_input2").value;
+        var x = +y + +z;
+        if (sums.length > 10) {
+            sums[9] = sums[8];
+            sums[8] = sums[7];
+            sums[7] = sums[6];
+            sums[6] = sums[5];
+            sums[5] = sums[4];
+            sums[4] = sums[3];
+            sums[3] = sums[2];
+            sums[2] = sums[1];
+            sums[1] = x;
+        }
+        else {
+            sums.push(x);
+        }
+        for (i = 0; i< sums.length; i++) {
+            text += sums[i] + '<br>';
+        }
+        document.getElementById("demo").innerHTML = text;
+    }
+
+</script>
+<p id="demo"></p>
+
+
+</html>
